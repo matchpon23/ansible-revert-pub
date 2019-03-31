@@ -1,0 +1,16 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+    - set_stats:
+      data:
+        repo_path: "{{ playbook_dir }}"
+
+    - name: file update
+      local_action: shell cd {{ repo_path }} ; git checkout {{ git_tag }}
+      when: switch_flag is defined
+      
+    - name: copy postfix config
+      copy:
+        src: "{{ repo_path }}"/files/hosts
+        dest: /etc/hosts

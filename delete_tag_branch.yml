@@ -1,0 +1,14 @@
+---
+- name: delete tag branch
+  hosts: all
+  gather_facts: no
+  tasks:
+    # branchをmasterに戻す
+    - shell: git checkout master
+      args:
+        chdir: "{{ repo_path }}"
+
+    # 指定したtab branchを削除
+    - shell: "git branch -d {{ git_tag }}"
+      args:
+        chdir: "{{ repo_path }}"
