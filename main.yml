@@ -3,8 +3,8 @@
   gather_facts: no
   tasks:
     - set_stats:
-      data:
-        repo_path: "{{ playbook_dir }}"
+        data:
+          repo_path: "{{ playbook_dir }}"
 
     - name: file update
       local_action: "shell cd {{ repo_path }} ; git checkout {{ git_tag }}"
