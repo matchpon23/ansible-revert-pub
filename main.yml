@@ -16,7 +16,7 @@
         msg: "{{ repo_path2 }}"
   
     - debug:
-        msg: "{{ repo_path }}"
+        msg: "{{ date.repo_path }}"
   
     - name: file update
       local_action: "shell cd {{ repo_path }} ; git checkout {{ git_tag }}"
