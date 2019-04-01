@@ -6,7 +6,8 @@
     # 切り戻しに指定したtagのブランチを作成
     - shell: "git checkout -b {{ git_tag }} {{ git_tag }}"
       args:
-        chdir: "{{ repo_path }}"
+        #chdir: "{{ repo_path }}"
+        chdir: "{{ playbook_dir }}"
 
     # `switch_flag` を定義
     - set_stats:

@@ -6,9 +6,11 @@
     # branchをmasterに戻す
     - shell: git checkout master
       args:
-        chdir: "{{ repo_path }}"
+        #chdir: "{{ repo_path }}"
+        chdir: "{{ playbook_dir }}"
 
     # 指定したtab branchを削除
     - shell: "git branch -d {{ git_tag }}"
       args:
-        chdir: "{{ repo_path }}"
+        #chdir: "{{ repo_path }}"
+        chdir: "{{ playbook_dir }}"
