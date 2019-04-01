@@ -15,14 +15,14 @@
     #- debug:
     #    msg: "{{ repo_path2 }}"
   
-    - debug:
-        msg: "{{ repo_path }}"
+    #- debug:
+    #    msg: "{{ repo_path }}"
   
     - name: file update
-      local_action: "shell cd {{ repo_path }} ; git checkout {{ git_tag }}"
+      local_action: "shell cd {{ playbook_dir }} ; git checkout {{ git_tag }}"
       when: switch_flag is defined
       
-    - name: copy postfix config
+    - name: copy hosts 
       copy:
-        src: "{{ repo_path }}/files/hosts"
+        src: "{{ playbook_dir }}/files/hosts"
         dest: /etc/hosts
