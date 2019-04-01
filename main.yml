@@ -6,22 +6,13 @@
         data:
           repo_path: "{{ playbook_dir }}"
   
-    #- set_fact:
-    #    repo_path2: "{{ playbook_dir }}"
-
-    #- debug:
-    #    msg: "{{ playbook_dir }}"
-  
-    #- debug:
-    #    msg: "{{ repo_path2 }}"
-  
-    #- debug:
-    #    msg: "{{ repo_path }}"
-  
     - name: file update
       local_action: "shell cd {{ playbook_dir }} ; git checkout {{ git_tag }}"
       when: switch_flag is defined
       
+    - fail:
+      msg: "The system may not be provisioned according to the CMDB status."
+
     - name: copy hosts 
       copy:
         src: "{{ playbook_dir }}/files/hosts"
