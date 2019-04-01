@@ -12,5 +12,5 @@
       
     - name: copy postfix config
       copy:
-        src: "{{ repo_path }}"/files/hosts
+        src: "{{ repo_path }}/files/hosts"
         dest: /etc/hosts
