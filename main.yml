@@ -6,8 +6,14 @@
         data:
           repo_path: "{{ playbook_dir }}"
   
+    - set_fact:
+        repo_path2: "{{ playbook_dir }}"
+
     - debug:
         msg: "{{ playbook_dir }}"
+  
+    - debug:
+        msg: "{{ repo_path2 }}"
   
     - debug:
         msg: "{{ repo_path }}"
