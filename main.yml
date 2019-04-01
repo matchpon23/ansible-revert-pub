@@ -13,12 +13,8 @@
 - hosts: all
   gather_facts: no
   tasks:
-    - name: file update
-      local_action: "shell cd {{ playbook_dir }} ; git checkout {{ git_tag }}"
-      when: switch_flag is defined
-      
     - fail:
-      msg: "The system may not be provisioned according to the CMDB status."
+        msg: "The system may not be provisioned according to the CMDB status."
 
     - name: copy hosts 
       copy:
