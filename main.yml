@@ -6,17 +6,17 @@
         data:
           repo_path: "{{ playbook_dir }}"
   
-    - set_fact:
-        repo_path2: "{{ playbook_dir }}"
+    #- set_fact:
+    #    repo_path2: "{{ playbook_dir }}"
 
-    - debug:
-        msg: "{{ playbook_dir }}"
+    #- debug:
+    #    msg: "{{ playbook_dir }}"
+  
+    #- debug:
+    #    msg: "{{ repo_path2 }}"
   
     - debug:
-        msg: "{{ repo_path2 }}"
-  
-    - debug:
-        msg: "{{ date.repo_path }}"
+        msg: "{{ ansible_stats }}"
   
     - name: file update
       local_action: "shell cd {{ repo_path }} ; git checkout {{ git_tag }}"
