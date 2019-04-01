@@ -16,7 +16,7 @@
     #    msg: "{{ repo_path2 }}"
   
     - debug:
-        msg: "{{ ansible_stats }}"
+        msg: "{{ repo_path }}"
   
     - name: file update
       local_action: "shell cd {{ repo_path }} ; git checkout {{ git_tag }}"
