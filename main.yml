@@ -6,6 +6,9 @@
         data:
           repo_path: "{{ playbook_dir }}"
 
+    - debug:
+        msg: "{{ repo_path }}"
+
     - name: file update
       local_action: "shell cd {{ repo_path }} ; git checkout {{ git_tag }}"
       when: switch_flag is defined
